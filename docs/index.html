@@ -1,0 +1,250 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="AeroReformer2: audio-guided referring image segmentation for aerial imagery, with the VoiceAeroRef dataset.">
+  <meta name="theme-color" content="#081522">
+  <meta property="og:title" content="AeroReformer2">
+  <meta property="og:description" content="Aerial Referring Transformer 2 for Audio-Guided Image Segmentation">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="assets/aeroreformer2.png">
+  <title>AeroReformer2 · Audio-Guided Aerial Segmentation</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    <nav class="nav shell" aria-label="Primary navigation">
+      <a class="brand" href="#top" aria-label="AeroReformer2 home">
+        <span class="brand-mark">AR²</span>
+        <span>AeroReformer2</span>
+      </a>
+      <button class="menu-button" type="button" aria-expanded="false" aria-controls="nav-links">
+        <span class="sr-only">Toggle navigation</span>
+        <span></span><span></span><span></span>
+      </button>
+      <div class="nav-links" id="nav-links">
+        <a href="#method">Method</a>
+        <a href="#dataset">Dataset</a>
+        <a href="#reproduce">Reproduce</a>
+        <a href="https://huggingface.co/datasets/lironui/VoiceAeroRef">Dataset ↗</a>
+        <a class="nav-cta" href="https://github.com/lironui/AeroReformer2">Code ↗</a>
+      </div>
+    </nav>
+  </header>
+
+  <main id="main">
+    <section class="hero" id="top">
+      <div class="hero-grid shell">
+        <div class="hero-copy">
+          <p class="eyebrow">Audio × Vision × Remote Sensing</p>
+          <h1>Point to an aerial object.<br><span>With your voice.</span></h1>
+          <p class="hero-lead">
+            AeroReformer2 converts a spoken referring expression and an aerial
+            image into a precise segmentation mask—combining confidence-gated
+            speech tokens, linear cross-modal attention and high-resolution
+            boundary refinement.
+          </p>
+          <div class="hero-actions">
+            <a class="button primary" href="https://github.com/lironui/AeroReformer2">Explore the code</a>
+            <a class="button secondary" href="https://huggingface.co/datasets/lironui/VoiceAeroRef">Get VoiceAeroRef</a>
+          </div>
+          <ul class="hero-meta" aria-label="Project features">
+            <li>Swin-B &amp; ResNet101</li>
+            <li>Wav2Vec2 speech tokens</li>
+            <li>1/4-resolution masks</li>
+          </ul>
+        </div>
+        <div class="signal-card" aria-label="Audio-guided segmentation concept">
+          <div class="signal-top">
+            <span>Spoken query</span>
+            <span class="live-dot">16 kHz</span>
+          </div>
+          <div class="waveform" aria-hidden="true">
+            <i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i>
+            <i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i>
+            <i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i>
+          </div>
+          <blockquote>“The small plane at the top-left corner.”</blockquote>
+          <div class="flow-line">
+            <span>Speech tokens</span>
+            <b>→</b>
+            <span>Visual query</span>
+            <b>→</b>
+            <span>Mask</span>
+          </div>
+          <div class="mask-preview" aria-hidden="true">
+            <span class="plane one">✦</span>
+            <span class="plane two">✦</span>
+            <span class="plane three">✦</span>
+            <span class="target-ring"></span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="stats-band" aria-label="Dataset summary">
+      <div class="stats shell">
+        <div><strong>52,466</strong><span>valid image–expression–mask triplets</span></div>
+        <div><strong>262,696</strong><span>audio–metadata records</span></div>
+        <div><strong>8</strong><span>English neural voices</span></div>
+        <div><strong>9</strong><span>controlled hard conditions</span></div>
+      </div>
+    </section>
+
+    <section class="section shell" id="method">
+      <div class="section-heading">
+        <p class="eyebrow">The method</p>
+        <h2>Speech-aware segmentation without quadratic cross-modal maps.</h2>
+        <p>
+          AeroReformer2 preserves speech tokens, learns their confidence and
+          routes them into hierarchical visual features. A shared high-resolution
+          head restores boundaries that coarse semantic features lose.
+        </p>
+      </div>
+      <div class="feature-grid">
+        <article>
+          <span class="feature-number">01</span>
+          <h3>Confidence-gated speech memory</h3>
+          <p>Wav2Vec2 tokens receive learned confidence weights before cross-modal interaction, reducing the influence of weak or corrupted regions.</p>
+        </article>
+        <article>
+          <span class="feature-number">02</span>
+          <h3>Kernel linear attention</h3>
+          <p>Speech-to-visual attention uses associative reductions instead of an explicit visual-by-audio attention matrix.</p>
+        </article>
+        <article>
+          <span class="feature-number">03</span>
+          <h3>Hierarchical context</h3>
+          <p>Swin-B or ResNet101 features at 1/32, 1/16 and 1/8 resolutions carry global context into speech-conditioned localization.</p>
+        </article>
+        <article>
+          <span class="feature-number">04</span>
+          <h3>1/4 boundary refinement</h3>
+          <p>Backbone context, audio-conditioned semantics and a detail path meet at 1/4 resolution before the final mask is restored.</p>
+        </article>
+      </div>
+      <figure class="paper-figure">
+        <img src="assets/aeroreformer2.png" alt="Detailed AeroReformer2 architecture with visual and speech branches">
+        <figcaption>AeroReformer2 architecture. Open the image for full-resolution equations and data flow.</figcaption>
+      </figure>
+    </section>
+
+    <section class="section dataset-section" id="dataset">
+      <div class="shell">
+        <div class="section-heading split-heading">
+          <div>
+            <p class="eyebrow">VoiceAeroRef</p>
+            <h2>A controlled audio layer for aerial referring segmentation.</h2>
+          </div>
+          <p>
+            Clean speech covers four accent groups and two genders. Hard
+            validation and test splits introduce rotor, wind and mixed
+            interference at three SNR-centred severity levels.
+          </p>
+        </div>
+        <div class="dataset-layout">
+          <div class="dataset-table-wrap">
+            <table>
+              <caption>VoiceAeroRef release inventory</caption>
+              <thead><tr><th>Config</th><th>Split</th><th>Records</th></tr></thead>
+              <tbody>
+                <tr><td><span class="pill clean">Clean</span></td><td>Train</td><td>210,352</td></tr>
+                <tr><td><span class="pill clean">Clean</span></td><td>Validation</td><td>10,013</td></tr>
+                <tr><td><span class="pill clean">Clean</span></td><td>Test</td><td>16,159</td></tr>
+                <tr><td><span class="pill hard">Hard</span></td><td>Validation</td><td>10,013</td></tr>
+                <tr><td><span class="pill hard">Hard</span></td><td>Test</td><td>16,159</td></tr>
+              </tbody>
+            </table>
+            <a class="text-link" href="https://huggingface.co/datasets/lironui/VoiceAeroRef">Read the dataset card →</a>
+          </div>
+          <div class="condition-grid">
+            <div><span>Rotor</span><b>15 / 7.5 / 0 dB</b></div>
+            <div><span>Wind</span><b>15 / 7.5 / 0 dB</b></div>
+            <div><span>Mixed</span><b>15 / 7.5 / 0 dB</b></div>
+            <p>Training remains clean. Model selection uses clean validation mIoU.</p>
+          </div>
+        </div>
+        <figure class="paper-figure light">
+          <img src="assets/dataset_pipeline.png" alt="VoiceAeroRef data construction and split pipeline">
+          <figcaption>VoiceAeroRef construction, quality control, speech generation, hard-set creation and split policy.</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section class="section shell" id="reproduce">
+      <div class="section-heading split-heading">
+        <div>
+          <p class="eyebrow">Reproduce</p>
+          <h2>From dataset shards to a trained model.</h2>
+        </div>
+        <p>
+          The repository includes deterministic data preparation, clean-validation
+          checkpoint selection, seven segmentation metrics, sharded mask export
+          and GPU efficiency profiling.
+        </p>
+      </div>
+      <div class="code-panel">
+        <div class="code-tabs" role="tablist" aria-label="Quick start steps">
+          <button class="code-tab active" role="tab" aria-selected="true" data-code="install">1 · Install</button>
+          <button class="code-tab" role="tab" aria-selected="false" data-code="data">2 · Data</button>
+          <button class="code-tab" role="tab" aria-selected="false" data-code="train">3 · Train</button>
+          <button class="code-tab" role="tab" aria-selected="false" data-code="eval">4 · Evaluate</button>
+        </div>
+        <div class="code-content">
+          <button class="copy-button" type="button">Copy</button>
+          <pre id="install" class="code-block active"><code>git clone https://github.com/lironui/AeroReformer2.git
+cd AeroReformer2
+python -m venv .venv
+source .venv/bin/activate
+pip install -e .</code></pre>
+          <pre id="data" class="code-block"><code>python scripts/prepare_voiceaeroref.py \
+  --output data/VoiceAeroRef \
+  --configs clean hard \
+  --verify-checksums</code></pre>
+          <pre id="train" class="code-block"><code>python -m aeroreformer2.train \
+  --model aeroreformer2_swin_b \
+  --risbench-root data/RISBench \
+  --audio-root data/VoiceAeroRef \
+  --train-manifest data/VoiceAeroRef/manifests/train.jsonl \
+  --val-manifest data/VoiceAeroRef/manifests/validation.jsonl \
+  --output runs/aeroreformer2_swin_b \
+  --device cuda</code></pre>
+          <pre id="eval" class="code-block"><code>python -m aeroreformer2.evaluate \
+  --checkpoint runs/aeroreformer2_swin_b/best.pt \
+  --manifests clean=data/VoiceAeroRef/manifests/test.jsonl \
+  --risbench-root data/RISBench \
+  --audio-root data/VoiceAeroRef \
+  --output outputs/metrics.json \
+  --prediction-root outputs/predictions \
+  --device cuda</code></pre>
+        </div>
+      </div>
+    </section>
+
+    <section class="cta-section">
+      <div class="shell cta-card">
+        <div>
+          <p class="eyebrow">Open research release</p>
+          <h2>Build on AeroReformer2.</h2>
+          <p>Model code, training tools, validation metrics, data preparation and a deployable project page—without internal baselines or ablation code.</p>
+        </div>
+        <div class="cta-actions">
+          <a class="button primary" href="https://github.com/lironui/AeroReformer2">View repository</a>
+          <a class="button secondary" href="https://huggingface.co/datasets/lironui/VoiceAeroRef">Open dataset</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="shell footer-grid">
+      <div><span class="brand-mark">AR²</span><p>AeroReformer2 · 2026</p></div>
+      <p>Code released under MIT. Dataset and upstream imagery may have separate terms.</p>
+    </div>
+  </footer>
+</body>
+</html>
+

@@ -1,0 +1,35 @@
+[build-system]
+requires = ["setuptools>=69", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "aeroreformer2"
+version = "1.0.0"
+description = "Aerial Referring Transformer 2 for Audio-Guided Image Segmentation"
+readme = "README.md"
+requires-python = ">=3.10"
+license = {file = "LICENSE"}
+authors = [{name = "AeroReformer2 Authors"}]
+dependencies = [
+  "torch>=2.2",
+  "torchvision>=0.17",
+  "transformers>=4.40",
+  "datasets>=2.18",
+  "huggingface-hub>=0.23",
+  "numpy>=1.26",
+  "Pillow>=10",
+]
+
+[project.urls]
+Repository = "https://github.com/lironui/AeroReformer2"
+Project = "https://lironui.github.io/AeroReformer2/"
+Dataset = "https://huggingface.co/datasets/lironui/VoiceAeroRef"
+
+[project.scripts]
+aero-train = "aeroreformer2.train:main"
+aero-evaluate = "aeroreformer2.evaluate:main"
+aero-predict = "aeroreformer2.predict:main"
+aero-profile = "aeroreformer2.profile:main"
+
+[tool.setuptools.packages.find]
+include = ["aeroreformer2*"]
