@@ -27,6 +27,7 @@
       </button>
       <div class="nav-links" id="nav-links">
         <a href="#method">Method</a>
+        <a href="#results">Results</a>
         <a href="#dataset">Dataset</a>
         <a href="#reproduce">Reproduce</a>
         <a href="https://huggingface.co/datasets/lironui/VoiceAeroRef">Dataset ↗</a>
@@ -130,6 +131,80 @@
         <img src="assets/aeroreformer2.png" alt="Detailed AeroReformer2 architecture with visual and speech branches">
         <figcaption>AeroReformer2 architecture. Open the image for full-resolution equations and data flow.</figcaption>
       </figure>
+    </section>
+
+    <section class="section results-section" id="results">
+      <div class="results-glow one" aria-hidden="true"></div>
+      <div class="results-glow two" aria-hidden="true"></div>
+      <div class="shell results-shell">
+        <div class="section-heading split-heading results-heading">
+          <div>
+            <p class="eyebrow">Qualitative results</p>
+            <h2>Precise masks from a spoken reference.</h2>
+          </div>
+          <p>
+            Representative clean-test comparisons from the paper. Each panel
+            shows the input, target mask, AeroReformer2 prediction and five
+            competing methods under the same spoken instruction.
+          </p>
+        </div>
+
+        <div class="result-browser">
+          <div class="result-tabs" role="tablist" aria-label="Qualitative comparison cases">
+            <button class="result-tab active" type="button" role="tab" aria-selected="true" data-result="result-one">
+              <span>01</span>
+              <b>Partial baseball field</b>
+              <small>Boundary recovery · IoU 0.971</small>
+            </button>
+            <button class="result-tab" type="button" role="tab" aria-selected="false" data-result="result-two">
+              <span>02</span>
+              <b>Small central object</b>
+              <small>Low-light localization · IoU 0.878</small>
+            </button>
+            <button class="result-tab" type="button" role="tab" aria-selected="false" data-result="result-three">
+              <span>03</span>
+              <b>Waterfront vehicle</b>
+              <small>Tiny-object segmentation · IoU 0.875</small>
+            </button>
+          </div>
+
+          <div class="result-stage">
+            <article class="result-panel active" id="result-one" role="tabpanel">
+              <button class="result-zoom" type="button" aria-label="Open baseball-field comparison at full size">
+                <img src="assets/results/qualitative_case_1.png" alt="Comparison of AeroReformer2 and five baselines for a partially visible baseball field">
+                <span>View full comparison</span>
+              </button>
+            </article>
+            <article class="result-panel" id="result-two" role="tabpanel" hidden>
+              <button class="result-zoom" type="button" aria-label="Open low-light object comparison at full size">
+                <img src="assets/results/qualitative_case_2.png" alt="Comparison of AeroReformer2 and five baselines for a small object in a low-light aerial image">
+                <span>View full comparison</span>
+              </button>
+            </article>
+            <article class="result-panel" id="result-three" role="tabpanel" hidden>
+              <button class="result-zoom" type="button" aria-label="Open waterfront-vehicle comparison at full size">
+                <img src="assets/results/qualitative_case_3.png" alt="Comparison of AeroReformer2 and five baselines for a tiny vehicle beside the waterfront">
+                <span>View full comparison</span>
+              </button>
+            </article>
+          </div>
+        </div>
+
+        <div class="result-notes" aria-label="What the examples demonstrate">
+          <article>
+            <span class="note-mark">A</span>
+            <div><b>Audio-grounded selection</b><p>The spoken description separates the intended instance from visually similar distractors.</p></div>
+          </article>
+          <article>
+            <span class="note-mark">B</span>
+            <div><b>Small-object sensitivity</b><p>Token-level speech guidance remains useful when the target occupies only a few pixels.</p></div>
+          </article>
+          <article>
+            <span class="note-mark">C</span>
+            <div><b>Boundary preservation</b><p>The 1/4-resolution refinement path restores contours after semantic localization.</p></div>
+          </article>
+        </div>
+      </div>
     </section>
 
     <section class="section dataset-section" id="dataset">
@@ -245,6 +320,10 @@ pip install -e .</code></pre>
       <p>Code released under MIT. Dataset and upstream imagery may have separate terms.</p>
     </div>
   </footer>
+
+  <dialog class="result-dialog" aria-label="Full-size qualitative comparison">
+    <button class="dialog-close" type="button" aria-label="Close full-size comparison">Close</button>
+    <img src="" alt="">
+  </dialog>
 </body>
 </html>
-

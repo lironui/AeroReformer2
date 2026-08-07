@@ -42,3 +42,45 @@ copyButton?.addEventListener("click", async () => {
   }, 1400);
 });
 
+const resultTabs = [...document.querySelectorAll(".result-tab")];
+const resultPanels = [...document.querySelectorAll(".result-panel")];
+
+resultTabs.forEach((tab) => {
+  tab.addEventListener("click", () => {
+    resultTabs.forEach((item) => {
+      item.classList.remove("active");
+      item.setAttribute("aria-selected", "false");
+    });
+    resultPanels.forEach((panel) => {
+      panel.classList.remove("active");
+      panel.hidden = true;
+    });
+
+    tab.classList.add("active");
+    tab.setAttribute("aria-selected", "true");
+    const panel = document.getElementById(tab.dataset.result);
+    if (panel) {
+      panel.hidden = false;
+      panel.classList.add("active");
+    }
+  });
+});
+
+const resultDialog = document.querySelector(".result-dialog");
+const dialogImage = resultDialog?.querySelector("img");
+const dialogClose = resultDialog?.querySelector(".dialog-close");
+
+document.querySelectorAll(".result-zoom").forEach((button) => {
+  button.addEventListener("click", () => {
+    const source = button.querySelector("img");
+    if (!resultDialog || !dialogImage || !source) return;
+    dialogImage.src = source.src;
+    dialogImage.alt = source.alt;
+    resultDialog.showModal();
+  });
+});
+
+dialogClose?.addEventListener("click", () => resultDialog.close());
+resultDialog?.addEventListener("click", (event) => {
+  if (event.target === resultDialog) resultDialog.close();
+});

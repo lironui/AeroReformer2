@@ -4,6 +4,7 @@
 
 [![Python](https://img.shields.io/badge/Python-3.10%2B-3776AB)](https://www.python.org/)
 [![PyTorch](https://img.shields.io/badge/PyTorch-2.2%2B-EE4C2C)](https://pytorch.org/)
+[![Project Page](https://img.shields.io/badge/Project%20Page-Live-14b8a6)](https://lironui.github.io/AeroReformer2/)
 [![Dataset](https://img.shields.io/badge/%F0%9F%A4%97%20Dataset-VoiceAeroRef-yellow)](https://huggingface.co/datasets/lironui/VoiceAeroRef)
 [![License: MIT](https://img.shields.io/badge/Code%20License-MIT-green.svg)](LICENSE)
 
@@ -11,6 +12,10 @@ AeroReformer2 segments an aerial object from an image and a spoken referring
 expression. The released model combines a ResNet101 or Swin-B visual backbone,
 Wav2Vec2 speech tokens, confidence-gated speech-visual kernel linear attention,
 multi-scale context fusion and a 1/4-resolution boundary refinement head.
+
+> **[View the AeroReformer2 project page →](https://lironui.github.io/AeroReformer2/)**  
+> Explore the architecture, VoiceAeroRef pipeline and qualitative comparisons
+> in an interactive, full-resolution presentation.
 
 This public repository intentionally contains only the two AeroReformer2
 backbone versions. Baseline implementations and internal ablation variants are
@@ -280,6 +285,12 @@ python -m unittest discover -s tests -v
 Tests cover both visual backbones, output shape and finiteness, the complete
 metric set, WebDataset extraction, RISBench path resolution and the absence of
 baseline/ablation model APIs.
+
+## GitHub Pages
+
+The static project page lives in `docs/`. The workflow in
+`.github/workflows/pages.yml` deploys it through GitHub Pages. In the repository
+settings, select **Pages → Source → GitHub Actions**, then push to `main`.
 
 ## Data and code licenses
 
