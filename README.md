@@ -281,12 +281,6 @@ Tests cover both visual backbones, output shape and finiteness, the complete
 metric set, WebDataset extraction, RISBench path resolution and the absence of
 baseline/ablation model APIs.
 
-## GitHub Pages
-
-The static project page lives in `docs/`. The workflow in
-`.github/workflows/pages.yml` deploys it through GitHub Pages. In the repository
-settings, select **Pages → Source → GitHub Actions**, then push to `main`.
-
 ## Data and code licenses
 
 The code in this repository is released under the [MIT License](LICENSE).
