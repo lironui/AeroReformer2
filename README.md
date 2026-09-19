@@ -1,6 +1,6 @@
 # AeroReformer2
 
-**Aerial Referring Transformer 2 for Audio-Guided Image Segmentation**
+**Spoken-Query Referring Segmentation for Aerial Images**
 
 [![Python](https://img.shields.io/badge/Python-3.10%2B-3776AB)](https://www.python.org/)
 [![PyTorch](https://img.shields.io/badge/PyTorch-2.2%2B-EE4C2C)](https://pytorch.org/)
@@ -14,8 +14,8 @@ Wav2Vec2 speech tokens, confidence-gated speech-visual kernel linear attention,
 multi-scale context fusion and a 1/4-resolution boundary refinement head.
 
 > **[View the AeroReformer2 project page →](https://lironui.github.io/AeroReformer2/)**  
-> Explore the architecture, VoiceAeroRef pipeline and qualitative comparisons
-> in an interactive, full-resolution presentation.
+> Explore 24 real examples with paired audio, RGB mask overlays, both model
+> backbones and LSCF comparisons, plus the revised paper's benchmarks and figures.
 
 This public repository intentionally contains only the two AeroReformer2
 backbone versions. Baseline implementations and internal ablation variants are

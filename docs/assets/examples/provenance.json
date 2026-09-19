@@ -1,0 +1,725 @@
+{
+  "note": "Saved predictions and paired audio from the revised paper. Display overlays only; no new inference or metric recomputation.",
+  "records": [
+    {
+      "id": "test_003522",
+      "group": "success",
+      "sources": {
+        "image": {
+          "path": "RISBench/rgb/test_2043_0.png",
+          "sha256": "d13313d120829073328c5988834d9eaddf0899034666900c0aa1aab590ac5289"
+        },
+        "gt": {
+          "path": "RISBench/mask/test_2043_0.png",
+          "sha256": "e3221ce44268cb21f8d9f0550b9ceec68220c43308b0b937e2c19df1babd12ab"
+        },
+        "audio": {
+          "path": "AudioRISBench/audio/clean/test/us_male/test_003522.wav",
+          "sha256": "5397ed96bc8ea48ee19aaa1e47eb803bc5c2df7b7265a7f37805ddca6c9fd90d"
+        },
+        "swin": {
+          "path": "results/test_predictions/aeroreformer2_swin_b_full_20260805/clean/masks/76/test_003522.png",
+          "sha256": "23f63823babb79ca81d19af8ab87ffadcd57c0e423e82d92394a453bd0c1609b"
+        },
+        "resnet": {
+          "path": "results/test_predictions/aeroreformer2_resnet101_full_20260805/clean/masks/76/test_003522.png",
+          "sha256": "69a3cb7bf71f533da974b1193ea06f18ecb55486e1a1f85a3db873e9d1642e92"
+        },
+        "lscf": {
+          "path": "results/test_predictions/lscf2025_swin_b_audio_adapter_full_20260721/clean/masks/76/test_003522.png",
+          "sha256": "9769c00cc1b313412db44ea4837cb096ab9e721b4a8a445471ba82d7ec479313"
+        }
+      }
+    },
+    {
+      "id": "test_006574",
+      "group": "success",
+      "sources": {
+        "image": {
+          "path": "RISBench/rgb/test_3813_4.png",
+          "sha256": "7802ab8151e4b6adcf74f64879d32f1087517b0d2d411fbb0eb0d3d962e81c61"
+        },
+        "gt": {
+          "path": "RISBench/mask/test_3813_4.png",
+          "sha256": "b1185ffc3f0f1d91d8115978070944ccaf91b0593396d63b8deb0619fa3ddcc0"
+        },
+        "audio": {
+          "path": "AudioRISBench/audio/clean/test/in_male/test_006574.wav",
+          "sha256": "51971c77288c5a3a2a9d110a32b23ce584c2177be7a0ca09940e8d8d9398b113"
+        },
+        "swin": {
+          "path": "results/test_predictions/aeroreformer2_swin_b_full_20260805/clean/masks/ae/test_006574.png",
+          "sha256": "de576142c0306c58115908c6dc7fc1fde96d8b62c93285b78a124ba03eb14948"
+        },
+        "resnet": {
+          "path": "results/test_predictions/aeroreformer2_resnet101_full_20260805/clean/masks/ae/test_006574.png",
+          "sha256": "ee6e5ac3dcc788d64f1e2628393ead524ec0050e3e2e5e8035a0decc49d0ada9"
+        },
+        "lscf": {
+          "path": "results/test_predictions/lscf2025_swin_b_audio_adapter_full_20260721/clean/masks/ae/test_006574.png",
+          "sha256": "fde970a521ea7fc7586979033dc406f770ca291ca0bbc65061e5a910e0d7cde3"
+        }
+      }
+    },
+    {
+      "id": "test_014110",
+      "group": "success",
+      "sources": {
+        "image": {
+          "path": "RISBench/rgb/test_8174_0.png",
+          "sha256": "08db4c7c169051cd829ba903055c7fdfdc05d2682f76277d8b63d438517ffb8d"
+        },
+        "gt": {
+          "path": "RISBench/mask/test_8174_0.png",
+          "sha256": "7aaaec0aba065dd886ea056f1c2c85af9147e0359aaad7e353f2834bd09aabeb"
+        },
+        "audio": {
+          "path": "AudioRISBench/audio/clean/test/gb_female/test_014110.wav",
+          "sha256": "ba0d5e1611ea56410141cec53946734bde4cb48125f23afb555d174122a9b84e"
+        },
+        "swin": {
+          "path": "results/test_predictions/aeroreformer2_swin_b_full_20260805/clean/masks/bd/test_014110.png",
+          "sha256": "6082c412a2044b7d16acaea93fe10a5917780691f93d7bf63c9c9f13385ae1b9"
+        },
+        "resnet": {
+          "path": "results/test_predictions/aeroreformer2_resnet101_full_20260805/clean/masks/bd/test_014110.png",
+          "sha256": "75d2ca1c56e1b9ccd00bebc088990ee9e77186a554e7528896bf1ee4f711bc61"
+        },
+        "lscf": {
+          "path": "results/test_predictions/lscf2025_swin_b_audio_adapter_full_20260721/clean/masks/bd/test_014110.png",
+          "sha256": "65795a5b91030a2a433dae510d1edf494082a9cfa1153cd94f3797759f68f257"
+        }
+      }
+    },
+    {
+      "id": "test_003951",
+      "group": "success",
+      "sources": {
+        "image": {
+          "path": "RISBench/rgb/test_2280_0.png",
+          "sha256": "a3d330367f599f46917bac1b5434b7c7b704cdd243e45f29ada2c66d8db2b349"
+        },
+        "gt": {
+          "path": "RISBench/mask/test_2280_0.png",
+          "sha256": "5961c74e9ccbd454f14c2301e674b09cd952d9629a051e58620fc95f3987be7b"
+        },
+        "audio": {
+          "path": "AudioRISBench/audio/clean/test/in_female/test_003951.wav",
+          "sha256": "05e5ed8c41d518ec8dd2ba1487b1c72484f8514c72336d92e02b957572107a61"
+        },
+        "swin": {
+          "path": "results/test_predictions/aeroreformer2_swin_b_full_20260805/clean/masks/40/test_003951.png",
+          "sha256": "6cc1fbf2ba0c038e112a5bf023c8641c1344387bfe6a9aea934417e49a8bc0d4"
+        },
+        "resnet": {
+          "path": "results/test_predictions/aeroreformer2_resnet101_full_20260805/clean/masks/40/test_003951.png",
+          "sha256": "8ce5aef70cd05e433e41bb6d85d2f4d2edaee85c2a738313386647e15fa304f9"
+        },
+        "lscf": {
+          "path": "results/test_predictions/lscf2025_swin_b_audio_adapter_full_20260721/clean/masks/40/test_003951.png",
+          "sha256": "2d9fcb53a02163df4f80abad82754408b947f2163d07a43967228d92e451b2e9"
+        }
+      }
+    },
+    {
+      "id": "test_016123",
+      "group": "success",
+      "sources": {
+        "image": {
+          "path": "RISBench/rgb/test_9329_0.png",
+          "sha256": "371b211a4db1f2f76b26b95f92d631d74ccb5a4507cf75c9b2c70c3672c2fa68"
+        },
+        "gt": {
+          "path": "RISBench/mask/test_9329_0.png",
+          "sha256": "e9f41914399b8d770b001752d2765cb91be077f0e8ba88c613aaf85274db2297"
+        },
+        "audio": {
+          "path": "AudioRISBench/audio/clean/test/au_male/test_016123.wav",
+          "sha256": "a796ab62036278723834bee1851c5a5d5298410498e6e0f38a8581986d705c66"
+        },
+        "swin": {
+          "path": "results/test_predictions/aeroreformer2_swin_b_full_20260805/clean/masks/ed/test_016123.png",
+          "sha256": "87252599dc5119b2a3e0692733a0daf04082e05f3adec789bc61c4200d96c26c"
+        },
+        "resnet": {
+          "path": "results/test_predictions/aeroreformer2_resnet101_full_20260805/clean/masks/ed/test_016123.png",
+          "sha256": "ddd322bc80aecd8c2500f6f5b6de5b3364b5dcf7ae30afa0291b0e326502d652"
+        },
+        "lscf": {
+          "path": "results/test_predictions/lscf2025_swin_b_audio_adapter_full_20260721/clean/masks/ed/test_016123.png",
+          "sha256": "b641450ac75f82ff746a60b0ac378121411de22c4d62988133b137368ecf7dbb"
+        }
+      }
+    },
+    {
+      "id": "test_008964",
+      "group": "success",
+      "sources": {
+        "image": {
+          "path": "RISBench/rgb/test_5190_0.png",
+          "sha256": "ecd715c167b1322bdd0ac7722717993fb05b22a657dae948cc71394e0590f5b7"
+        },
+        "gt": {
+          "path": "RISBench/mask/test_5190_0.png",
+          "sha256": "eea902eff88ee1b0ccc8ac22e42c87ca0bf994e614523e3902d7e54c4e14cd3f"
+        },
+        "audio": {
+          "path": "AudioRISBench/audio/clean/test/gb_male/test_008964.wav",
+          "sha256": "cffb3f819ad13482d08cd784a6546b4d2e0d3d24b6c015fa0e889850c0ff2b53"
+        },
+        "swin": {
+          "path": "results/test_predictions/aeroreformer2_swin_b_full_20260805/clean/masks/a3/test_008964.png",
+          "sha256": "cae8f3f23e7af0ada69afd10e9948c7297c08afc5dcc6b71c5067595c3345ba5"
+        },
+        "resnet": {
+          "path": "results/test_predictions/aeroreformer2_resnet101_full_20260805/clean/masks/a3/test_008964.png",
+          "sha256": "1b9c9f344c45afcc59261d28d05c73eb414e7de34956ee761d4960997ce1eccf"
+        },
+        "lscf": {
+          "path": "results/test_predictions/lscf2025_swin_b_audio_adapter_full_20260721/clean/masks/a3/test_008964.png",
+          "sha256": "908ce483c6634e44667e24df886a57f29530abceba0e0d9ed114f2bb7500e590"
+        }
+      }
+    },
+    {
+      "id": "test_003753",
+      "group": "failure",
+      "sources": {
+        "image": {
+          "path": "RISBench/rgb/test_2171_0.png",
+          "sha256": "087139bbab50c811b1da0d048d6528af9f5b3f9bb702aa8ba8afe9d36cf771b6"
+        },
+        "gt": {
+          "path": "RISBench/mask/test_2171_0.png",
+          "sha256": "6d5644840e3bf34fbafa6be01248ce77b3a9913b409d0f5a63be2dd3ad9a34cd"
+        },
+        "audio": {
+          "path": "AudioRISBench/audio/clean/test/us_male/test_003753.wav",
+          "sha256": "9eaaf5067e573e34f79972e7fe27e9eba4935e45a4dc6d68200bf1a8a3c17804"
+        },
+        "swin": {
+          "path": "results/test_predictions/aeroreformer2_swin_b_full_20260805/clean/masks/7e/test_003753.png",
+          "sha256": "36112dc3ff070e7539a5cd211184f19659476a04cc37c5622a9803ec4ed1c2bd"
+        },
+        "resnet": {
+          "path": "results/test_predictions/aeroreformer2_resnet101_full_20260805/clean/masks/7e/test_003753.png",
+          "sha256": "dba59ae7aa2034d27adaefad8d099e1328503f453443e40331df617b0456b828"
+        },
+        "lscf": {
+          "path": "results/test_predictions/lscf2025_swin_b_audio_adapter_full_20260721/clean/masks/7e/test_003753.png",
+          "sha256": "4472ae1e4877f9c5257621a1bbc5b64759fdc1d7309358aa4b9420748b91bafb"
+        }
+      }
+    },
+    {
+      "id": "test_001954",
+      "group": "failure",
+      "sources": {
+        "image": {
+          "path": "RISBench/rgb/test_1132_1.png",
+          "sha256": "67c3eaa406904d3393bce75b47daccde2127b8962ca798c93bc6aec069459924"
+        },
+        "gt": {
+          "path": "RISBench/mask/test_1132_1.png",
+          "sha256": "f847b86d69deafaf8fc131bebd8cb1495d446606ccf7686fac7e757eac9ad6f0"
+        },
+        "audio": {
+          "path": "AudioRISBench/audio/clean/test/au_male/test_001954.wav",
+          "sha256": "c77f572efea4d68dc4b7692ea80902136a13c8724b1fc977cad88260f48c24ca"
+        },
+        "swin": {
+          "path": "results/test_predictions/aeroreformer2_swin_b_full_20260805/clean/masks/7d/test_001954.png",
+          "sha256": "71848e04af41f95bb99af72e3d74e3cd7dd0dc336544566e5b35ebdd454af315"
+        },
+        "resnet": {
+          "path": "results/test_predictions/aeroreformer2_resnet101_full_20260805/clean/masks/7d/test_001954.png",
+          "sha256": "0a3de10a4c4855addcf260af70fef66d9df3c55f79539ea036e7b15684aed7d0"
+        },
+        "lscf": {
+          "path": "results/test_predictions/lscf2025_swin_b_audio_adapter_full_20260721/clean/masks/7d/test_001954.png",
+          "sha256": "705aca265f14560d64afc3e69ff9a795441a2a808446d4736f1f478084597e29"
+        }
+      }
+    },
+    {
+      "id": "test_010299",
+      "group": "failure",
+      "sources": {
+        "image": {
+          "path": "RISBench/rgb/test_5949_1.png",
+          "sha256": "1e4c6a25223544795333ac77c91206bd3b4d0047a831ee782c333e2a9cf96193"
+        },
+        "gt": {
+          "path": "RISBench/mask/test_5949_1.png",
+          "sha256": "88d630cc07f8ca6f73ec967326f587693b2c9250cf48fcec986ef53ef17c80a0"
+        },
+        "audio": {
+          "path": "AudioRISBench/audio/clean/test/gb_male/test_010299.wav",
+          "sha256": "9edb8692beb2989157cf48aaeeace398b68433e8f1038d5200d78f3d41fb010d"
+        },
+        "swin": {
+          "path": "results/test_predictions/aeroreformer2_swin_b_full_20260805/clean/masks/71/test_010299.png",
+          "sha256": "d20552c6c1ee1484db0ca79661d4395b09995e1d6ac2017403e17e164e48155a"
+        },
+        "resnet": {
+          "path": "results/test_predictions/aeroreformer2_resnet101_full_20260805/clean/masks/71/test_010299.png",
+          "sha256": "ff2f2978576f82cd705c2909024aff1aafe1724a6d597f84496859878d6321ec"
+        },
+        "lscf": {
+          "path": "results/test_predictions/lscf2025_swin_b_audio_adapter_full_20260721/clean/masks/71/test_010299.png",
+          "sha256": "cf79100d74df658905a0e64527e06f2c9ce1d0bcb565552081f38674db57aadc"
+        }
+      }
+    },
+    {
+      "id": "test_001377",
+      "group": "failure",
+      "sources": {
+        "image": {
+          "path": "RISBench/rgb/test_815_0.png",
+          "sha256": "219e39f1e86921d58e3cf4860b19decb5c58354b0071e861371d73ea44c34ef2"
+        },
+        "gt": {
+          "path": "RISBench/mask/test_815_0.png",
+          "sha256": "fa13a0588bf406c4134b1f3482ba70c9a666a2b10c9b5f8e915d8671aa4478dd"
+        },
+        "audio": {
+          "path": "AudioRISBench/audio/clean/test/us_female/test_001377.wav",
+          "sha256": "c4e65e0e28923d426b148f387e99e18d0593dc2fca2047f4f0fde25be8f6d0ce"
+        },
+        "swin": {
+          "path": "results/test_predictions/aeroreformer2_swin_b_full_20260805/clean/masks/09/test_001377.png",
+          "sha256": "de26ed3bbb4a799c03b549a953b78c836e9b7565cafc9ff7a7d34fd68f9222c0"
+        },
+        "resnet": {
+          "path": "results/test_predictions/aeroreformer2_resnet101_full_20260805/clean/masks/09/test_001377.png",
+          "sha256": "a821f6bf74a114679b1d4ac8e66ba2473c78147f30dc26889d26c9228f762f36"
+        },
+        "lscf": {
+          "path": "results/test_predictions/lscf2025_swin_b_audio_adapter_full_20260721/clean/masks/09/test_001377.png",
+          "sha256": "9284e0bf3bb5d387cac6b5c88ad6d49ea439d4874687be5a30ada1b8efcf0ea7"
+        }
+      }
+    },
+    {
+      "id": "test_009700",
+      "group": "failure",
+      "sources": {
+        "image": {
+          "path": "RISBench/rgb/test_5612_0.png",
+          "sha256": "ee0b94902a294462c3d01a01c1c5b8120d5a4afc8613bd4a111833808c51079c"
+        },
+        "gt": {
+          "path": "RISBench/mask/test_5612_0.png",
+          "sha256": "1351b02a976f53dc189ccbbbaa81d6d0c4c6214f23b73a8700bd70337a3a53cb"
+        },
+        "audio": {
+          "path": "AudioRISBench/audio/clean/test/us_male/test_009700.wav",
+          "sha256": "dcd58e36dfb5f99d1405d31a41c74728fc07a0a99f78fad7cf6121ed87f21bc2"
+        },
+        "swin": {
+          "path": "results/test_predictions/aeroreformer2_swin_b_full_20260805/clean/masks/e9/test_009700.png",
+          "sha256": "8f19fa9f17dc39f78561541e4b7a83e23f488e32374a461f5581ac687c28cfcc"
+        },
+        "resnet": {
+          "path": "results/test_predictions/aeroreformer2_resnet101_full_20260805/clean/masks/e9/test_009700.png",
+          "sha256": "23d47bb354a94a1763f48fb846f8a8f87d68d2c7f3350ed4db0fd48a2eedfde1"
+        },
+        "lscf": {
+          "path": "results/test_predictions/lscf2025_swin_b_audio_adapter_full_20260721/clean/masks/e9/test_009700.png",
+          "sha256": "9112c04675b5f3a98a64a6edbb71ac980d8d8afc61eaef98556370224f0ff479"
+        }
+      }
+    },
+    {
+      "id": "test_008086",
+      "group": "failure",
+      "sources": {
+        "image": {
+          "path": "RISBench/rgb/test_4671_2.png",
+          "sha256": "5a84a008d7643e1765c2459d05a0d4fa1cb4b04ce478363354daf37f09c80d30"
+        },
+        "gt": {
+          "path": "RISBench/mask/test_4671_2.png",
+          "sha256": "efb8e433c6b163353397008bf07106a97e1ad7dae5ecd1b7f0a10ac8c2420a87"
+        },
+        "audio": {
+          "path": "AudioRISBench/audio/clean/test/in_female/test_008086.wav",
+          "sha256": "8d1dacfdd5c4825ee6db8819e754f7ef40d977313e370cb9074b17e335e8a5c9"
+        },
+        "swin": {
+          "path": "results/test_predictions/aeroreformer2_swin_b_full_20260805/clean/masks/83/test_008086.png",
+          "sha256": "15cf7edcec00047cbf506cdb48a1f48bfe6ed3f77eb8f09ed8e0dbc615c0b5fb"
+        },
+        "resnet": {
+          "path": "results/test_predictions/aeroreformer2_resnet101_full_20260805/clean/masks/83/test_008086.png",
+          "sha256": "d7b28b1c377b94102660049d624fe4fdd19a1db8c6ba906b8689681f9fb3c84b"
+        },
+        "lscf": {
+          "path": "results/test_predictions/lscf2025_swin_b_audio_adapter_full_20260721/clean/masks/83/test_008086.png",
+          "sha256": "5b8a40101bf55b33f3baa1ed843dd8f8275589525e5fc2e6143b48d9c23a3cb7"
+        }
+      }
+    },
+    {
+      "id": "aeriald_P2239_patch_006038_o62846",
+      "group": "external",
+      "sources": {
+        "image": {
+          "path": "external_test500/selected100_work/dataset/images/aeriald_P2239_patch_006038_o62846.png",
+          "sha256": "29a641b2c86226e9f9507d81f599feb32c38ba175da9f757ffe1095367cf9355"
+        },
+        "gt": {
+          "path": "external_test500/selected100_work/dataset/masks/aeriald_P2239_patch_006038_o62846.png",
+          "sha256": "fe4754d4efa11eddfbd8990d5517556332464082f3c18606b3bad4b5a25a44b5"
+        },
+        "audio": {
+          "path": "external_test500/selected100_work/dataset/audio/qwen3tts/aeriald_P2239_patch_006038_o62846.wav",
+          "sha256": "89331024fcc258830de7899df86030aecf38d26c49e27357b40912db59c871e5"
+        },
+        "swin": {
+          "path": "results/external/aeroreformer2_swin_b_full_20260805/qwen100/test_qwen3tts/masks/93/aeriald_P2239_patch_006038_o62846.png",
+          "sha256": "882c70a59a594ba381654acd0aee917c436af483794de3f135a7e3f50d32fa6e"
+        },
+        "resnet": {
+          "path": "results/external/aeroreformer2_resnet101_full_20260805/qwen100/test_qwen3tts/masks/93/aeriald_P2239_patch_006038_o62846.png",
+          "sha256": "ad8f853a13615d152e0d62d9324c4cc08a7445d3c0a1b5529c8684cffd69a202"
+        },
+        "lscf": {
+          "path": "results/external/lscf2025_swin_b_audio_adapter_full_20260721/qwen100/test_qwen3tts/masks/93/aeriald_P2239_patch_006038_o62846.png",
+          "sha256": "a5e85107b25d10b67a129fc369d44f848623e87463a320fddb616a6bd34bd56a"
+        }
+      }
+    },
+    {
+      "id": "aeriald_P2337_patch_006162_o69984",
+      "group": "external",
+      "sources": {
+        "image": {
+          "path": "external_test500/selected100_work/dataset/images/aeriald_P2337_patch_006162_o69984.png",
+          "sha256": "7edc3abb52afedaee2e56bb34175c75e787b7b20ec80852b57b716cb8ec76f7b"
+        },
+        "gt": {
+          "path": "external_test500/selected100_work/dataset/masks/aeriald_P2337_patch_006162_o69984.png",
+          "sha256": "acc38130ae1b2b36493574c14818e60e3a740f130e8f16d414cfda9b97206482"
+        },
+        "audio": {
+          "path": "external_test500/selected100_work/dataset/audio/qwen3tts/aeriald_P2337_patch_006162_o69984.wav",
+          "sha256": "d0ea015150778ce25457dc24f3c16165ae3279ce7a05032e7e8048334b2ddff4"
+        },
+        "swin": {
+          "path": "results/external/aeroreformer2_swin_b_full_20260805/qwen100/test_qwen3tts/masks/b0/aeriald_P2337_patch_006162_o69984.png",
+          "sha256": "41c1faf94f0c9d01c9ef70ae1f6952bd2a72474c752a99ffe125f03e6322eaa4"
+        },
+        "resnet": {
+          "path": "results/external/aeroreformer2_resnet101_full_20260805/qwen100/test_qwen3tts/masks/b0/aeriald_P2337_patch_006162_o69984.png",
+          "sha256": "6ff058dd7819560414ca34986e57b252dec7a45a36bda454a78f6a7d9b0a7645"
+        },
+        "lscf": {
+          "path": "results/external/lscf2025_swin_b_audio_adapter_full_20260721/qwen100/test_qwen3tts/masks/b0/aeriald_P2337_patch_006162_o69984.png",
+          "sha256": "5f4e89679ca98105a754b6ebeb603e3833a73333ca22b7b371dfc57326023c19"
+        }
+      }
+    },
+    {
+      "id": "aeriald_P1066_patch_001751_o25857",
+      "group": "external",
+      "sources": {
+        "image": {
+          "path": "external_test500/selected100_work/dataset/images/aeriald_P1066_patch_001751_o25857.png",
+          "sha256": "6aeff96a62f9fd5fb91787085ab1992962397b420f36e1f2c4d1fdf68d130ee4"
+        },
+        "gt": {
+          "path": "external_test500/selected100_work/dataset/masks/aeriald_P1066_patch_001751_o25857.png",
+          "sha256": "3a4b9f06668b48710e37b029d58703ed4fe8be0b8e73a6507bc41b5c6be5c61a"
+        },
+        "audio": {
+          "path": "external_test500/selected100_work/dataset/audio/qwen3tts/aeriald_P1066_patch_001751_o25857.wav",
+          "sha256": "083dfe255f31f34afd65022ee46c3a537dc27e7fc54e1e4065200d7813a63d7a"
+        },
+        "swin": {
+          "path": "results/external/aeroreformer2_swin_b_full_20260805/qwen100/test_qwen3tts/masks/2e/aeriald_P1066_patch_001751_o25857.png",
+          "sha256": "c88cdad114b8b968ad270b2d37eeb5de9ea9136e3cc6afd16dd0136b3badf50c"
+        },
+        "resnet": {
+          "path": "results/external/aeroreformer2_resnet101_full_20260805/qwen100/test_qwen3tts/masks/2e/aeriald_P1066_patch_001751_o25857.png",
+          "sha256": "653006a5054b030565ad43dbc23f61df017d1106c7114e9bed54bcffa0bd10a1"
+        },
+        "lscf": {
+          "path": "results/external/lscf2025_swin_b_audio_adapter_full_20260721/qwen100/test_qwen3tts/masks/2e/aeriald_P1066_patch_001751_o25857.png",
+          "sha256": "1f2f58737ad91e4a7129c4841a26cb84863e5516724bec95e188bd51e0d043a4"
+        }
+      }
+    },
+    {
+      "id": "aeriald_P0019_patch_000129_o511",
+      "group": "external",
+      "sources": {
+        "image": {
+          "path": "external_test500/selected100_work/dataset/images/aeriald_P0019_patch_000129_o511.png",
+          "sha256": "ab7da0650a45198786dc6797f886a6156048ca70e8acbd56c4c43efca62279b5"
+        },
+        "gt": {
+          "path": "external_test500/selected100_work/dataset/masks/aeriald_P0019_patch_000129_o511.png",
+          "sha256": "a5bfb0a62e9138e0e2dc89c70a4fb3f813524a94d9e7c21a85e27fb65a660ee0"
+        },
+        "audio": {
+          "path": "external_test500/selected100_work/dataset/audio/qwen3tts/aeriald_P0019_patch_000129_o511.wav",
+          "sha256": "c33f4aeff53698fa37af83e90dca1193245d5a392ad2ac4c79164791096d946b"
+        },
+        "swin": {
+          "path": "results/external/aeroreformer2_swin_b_full_20260805/qwen100/test_qwen3tts/masks/5e/aeriald_P0019_patch_000129_o511.png",
+          "sha256": "3e10924ab47f9472a0a9cd91fe306f93c9807ff7767c844960656595a6e49923"
+        },
+        "resnet": {
+          "path": "results/external/aeroreformer2_resnet101_full_20260805/qwen100/test_qwen3tts/masks/5e/aeriald_P0019_patch_000129_o511.png",
+          "sha256": "068bd31feecc618340cc3eabb8b2ad3705b9f9779bcfb7e55d728bf72460063a"
+        },
+        "lscf": {
+          "path": "results/external/lscf2025_swin_b_audio_adapter_full_20260721/qwen100/test_qwen3tts/masks/5e/aeriald_P0019_patch_000129_o511.png",
+          "sha256": "3ef9c1dafce0830becd0e143f3540dd7366608ffe812fd81721c4ac195459b9c"
+        }
+      }
+    },
+    {
+      "id": "aeriald_P2241_patch_006041_o62852",
+      "group": "external",
+      "sources": {
+        "image": {
+          "path": "external_test500/selected100_work/dataset/images/aeriald_P2241_patch_006041_o62852.png",
+          "sha256": "76a3a8d67ed0a32161bef861a22f2853b43e68fc5c1be870ab4c1a3d5daa42eb"
+        },
+        "gt": {
+          "path": "external_test500/selected100_work/dataset/masks/aeriald_P2241_patch_006041_o62852.png",
+          "sha256": "3d76bf29cbf8853878b00a406d39c855752e527df8200ea069c3b437ca9ab369"
+        },
+        "audio": {
+          "path": "external_test500/selected100_work/dataset/audio/qwen3tts/aeriald_P2241_patch_006041_o62852.wav",
+          "sha256": "8700e50f5836d3c1c05ab7f122cd9eff824847f6a2318628495f4304a32878ca"
+        },
+        "swin": {
+          "path": "results/external/aeroreformer2_swin_b_full_20260805/qwen100/test_qwen3tts/masks/f1/aeriald_P2241_patch_006041_o62852.png",
+          "sha256": "1f2916098f27e5763f19caca73c20f44a4fb8008ab6bfc001fc5c16a171a4281"
+        },
+        "resnet": {
+          "path": "results/external/aeroreformer2_resnet101_full_20260805/qwen100/test_qwen3tts/masks/f1/aeriald_P2241_patch_006041_o62852.png",
+          "sha256": "51e32e8659372525f3e528e2f4f69a82af60d76b57583c14da3f60d8f6d17191"
+        },
+        "lscf": {
+          "path": "results/external/lscf2025_swin_b_audio_adapter_full_20260721/qwen100/test_qwen3tts/masks/f1/aeriald_P2241_patch_006041_o62852.png",
+          "sha256": "a41efc2edaecc287917170ff9e80fb7a58c516493a90b3b83b4cfc2710043492"
+        }
+      }
+    },
+    {
+      "id": "aeriald_P0499_patch_000697_o9961",
+      "group": "external",
+      "sources": {
+        "image": {
+          "path": "external_test500/selected100_work/dataset/images/aeriald_P0499_patch_000697_o9961.png",
+          "sha256": "88ac637d763b27cc1a35a6a867c9ccb56fc11ac81942bcf213a0873d296a09dc"
+        },
+        "gt": {
+          "path": "external_test500/selected100_work/dataset/masks/aeriald_P0499_patch_000697_o9961.png",
+          "sha256": "91a4b3959a5fca272610642d668577365c6c4ca52e65ab8c7cd844a9a8c46f3f"
+        },
+        "audio": {
+          "path": "external_test500/selected100_work/dataset/audio/qwen3tts/aeriald_P0499_patch_000697_o9961.wav",
+          "sha256": "c56d4556066c86b4e386e039ffddd5dcbec8890826ec202698ce38a432bd8669"
+        },
+        "swin": {
+          "path": "results/external/aeroreformer2_swin_b_full_20260805/qwen100/test_qwen3tts/masks/c3/aeriald_P0499_patch_000697_o9961.png",
+          "sha256": "a60a97a0704868daafa76dac4ed52f38d27f1b7b7b5c60d15941856f4598efed"
+        },
+        "resnet": {
+          "path": "results/external/aeroreformer2_resnet101_full_20260805/qwen100/test_qwen3tts/masks/c3/aeriald_P0499_patch_000697_o9961.png",
+          "sha256": "16e832a7407ed4fa672148e7336d9a533e54aac3695764ba271bdff9c87038ad"
+        },
+        "lscf": {
+          "path": "results/external/lscf2025_swin_b_audio_adapter_full_20260721/qwen100/test_qwen3tts/masks/c3/aeriald_P0499_patch_000697_o9961.png",
+          "sha256": "361570e13f18a6812a5aa58e1a8b3f447828bc1c21c1e2ba51b74f21ff077f23"
+        }
+      }
+    },
+    {
+      "id": "aeriald_P0161_patch_000317_o6135",
+      "group": "human",
+      "sources": {
+        "image": {
+          "path": "external_test500/selected100_work/dataset/images/aeriald_P0161_patch_000317_o6135.png",
+          "sha256": "09886c9ed03eaa282233637f9557339e6dbd019aa80da105c92bb0cc543e0963"
+        },
+        "gt": {
+          "path": "external_test500/selected100_work/dataset/masks/aeriald_P0161_patch_000317_o6135.png",
+          "sha256": "3dc764dc47197a388550f4b9bce5548a520ab061864e7a9edfa3ffa08eeed26a"
+        },
+        "audio": {
+          "path": "external_test500/selected100_work/dataset/audio/human/aeriald_P0161_patch_000317_o6135.wav",
+          "sha256": "1f433f296f77da32a16d5fed3dbdc26d862571a599ff77ae807c368623ce0b71"
+        },
+        "swin": {
+          "path": "results/external/aeroreformer2_swin_b_full_20260805/paired10/test_human10/masks/ff/aeriald_P0161_patch_000317_o6135.png",
+          "sha256": "0d3fd168b28acdc1414af94ac7650fc597052dd03844e982237244028ce697b7"
+        },
+        "resnet": {
+          "path": "results/external/aeroreformer2_resnet101_full_20260805/paired10/test_human10/masks/ff/aeriald_P0161_patch_000317_o6135.png",
+          "sha256": "83a40b3afbdafdcdb5397fe3a2cae8886acfb02350a8f1198ee053356120c891"
+        },
+        "lscf": {
+          "path": "results/external/lscf2025_swin_b_audio_adapter_full_20260721/paired10/test_human10/masks/ff/aeriald_P0161_patch_000317_o6135.png",
+          "sha256": "d193aaf416ae266eb6b146fc25e292b6ef2ebe52d94587f515a40609eb861d27"
+        }
+      }
+    },
+    {
+      "id": "aeriald_P1242_patch_002509_o32042",
+      "group": "human",
+      "sources": {
+        "image": {
+          "path": "external_test500/selected100_work/dataset/images/aeriald_P1242_patch_002509_o32042.png",
+          "sha256": "a5acbc82c51350bf4c31ef783e05c0b61aefb6bda69fc4ab5eab69f783ae74bd"
+        },
+        "gt": {
+          "path": "external_test500/selected100_work/dataset/masks/aeriald_P1242_patch_002509_o32042.png",
+          "sha256": "e8073a67b0dce849ee60632e7f5b81d7ece8f1b833316240d508d51d2d4a44ff"
+        },
+        "audio": {
+          "path": "external_test500/selected100_work/dataset/audio/human/aeriald_P1242_patch_002509_o32042.wav",
+          "sha256": "2580593750fc4bba9a1a7bc1ad384be6d30e92ed8c541adddffd5703a3860414"
+        },
+        "swin": {
+          "path": "results/external/aeroreformer2_swin_b_full_20260805/paired10/test_human10/masks/0f/aeriald_P1242_patch_002509_o32042.png",
+          "sha256": "73614ff5d4479eeaa4b0297babcdb7448f549144a6a4edcc24ecdfc5a2bc1ce8"
+        },
+        "resnet": {
+          "path": "results/external/aeroreformer2_resnet101_full_20260805/paired10/test_human10/masks/0f/aeriald_P1242_patch_002509_o32042.png",
+          "sha256": "fee9dd10c854840ff66ea684d534be3e58b87a6b422c47fe1c4ec64d84bfc3df"
+        },
+        "lscf": {
+          "path": "results/external/lscf2025_swin_b_audio_adapter_full_20260721/paired10/test_human10/masks/0f/aeriald_P1242_patch_002509_o32042.png",
+          "sha256": "adca9cb74d07cfb4066f8da905bf9dfa56707b7973e8731d37888468b818dd89"
+        }
+      }
+    },
+    {
+      "id": "aeriald_P1583_patch_004591_o46074",
+      "group": "human",
+      "sources": {
+        "image": {
+          "path": "external_test500/selected100_work/dataset/images/aeriald_P1583_patch_004591_o46074.png",
+          "sha256": "7ab26529bc0e4846f398c20c1ab71cea7da7a87b29b9226b7ac91d35127772f0"
+        },
+        "gt": {
+          "path": "external_test500/selected100_work/dataset/masks/aeriald_P1583_patch_004591_o46074.png",
+          "sha256": "d61627fbeb80a1b5cc372b0bb938eea520be73164f082ffc1c6e939a1043081c"
+        },
+        "audio": {
+          "path": "external_test500/selected100_work/dataset/audio/human/aeriald_P1583_patch_004591_o46074.wav",
+          "sha256": "4ca90a501a442c27577f0c095a47a747577f77abe76a6821d1173a59bca366bb"
+        },
+        "swin": {
+          "path": "results/external/aeroreformer2_swin_b_full_20260805/paired10/test_human10/masks/26/aeriald_P1583_patch_004591_o46074.png",
+          "sha256": "810897618614a7052f17233ec93d6216b6a44c4466af3c6bc5f9bd459333d41e"
+        },
+        "resnet": {
+          "path": "results/external/aeroreformer2_resnet101_full_20260805/paired10/test_human10/masks/26/aeriald_P1583_patch_004591_o46074.png",
+          "sha256": "eff2247677540cd57e4fcb33210e5529183ac42a49d32fda66e5a2e653f483d7"
+        },
+        "lscf": {
+          "path": "results/external/lscf2025_swin_b_audio_adapter_full_20260721/paired10/test_human10/masks/26/aeriald_P1583_patch_004591_o46074.png",
+          "sha256": "c0c52340af0a89d024b0b0414be097f6ae783f80bc506d92f1d36084eaf41d2c"
+        }
+      }
+    },
+    {
+      "id": "aeriald_P0964_patch_001344_o23453",
+      "group": "human",
+      "sources": {
+        "image": {
+          "path": "external_test500/selected100_work/dataset/images/aeriald_P0964_patch_001344_o23453.png",
+          "sha256": "74b656b69c211e237765a4b3a87ac39fa15f050b623f3c014a5f57a87c90b248"
+        },
+        "gt": {
+          "path": "external_test500/selected100_work/dataset/masks/aeriald_P0964_patch_001344_o23453.png",
+          "sha256": "1c4c7a755b3ab72de036eec59811e5d9c0fd3cdb1399608c21f45f7ef1aeecf8"
+        },
+        "audio": {
+          "path": "external_test500/selected100_work/dataset/audio/human/aeriald_P0964_patch_001344_o23453.wav",
+          "sha256": "75bb7112dc1383183d9788921cbcff14c4761425744552407b7b6f11ec73d29d"
+        },
+        "swin": {
+          "path": "results/external/aeroreformer2_swin_b_full_20260805/paired10/test_human10/masks/cc/aeriald_P0964_patch_001344_o23453.png",
+          "sha256": "b973b3aacb432109257c013b1f89263173bd9f95f10b9c211c7b9156db9a23fb"
+        },
+        "resnet": {
+          "path": "results/external/aeroreformer2_resnet101_full_20260805/paired10/test_human10/masks/cc/aeriald_P0964_patch_001344_o23453.png",
+          "sha256": "467a7e856bff56339372572ae273f3e05ed5b387bb2f661e2c9fd1def9b6dbee"
+        },
+        "lscf": {
+          "path": "results/external/lscf2025_swin_b_audio_adapter_full_20260721/paired10/test_human10/masks/cc/aeriald_P0964_patch_001344_o23453.png",
+          "sha256": "37adb75b44d5c8c79da14a94f3dbc87a490165a2fae046988ac8270ac783593f"
+        }
+      }
+    },
+    {
+      "id": "aeriald_P2721_patch_007601_o105362",
+      "group": "human",
+      "sources": {
+        "image": {
+          "path": "external_test500/selected100_work/dataset/images/aeriald_P2721_patch_007601_o105362.png",
+          "sha256": "ca0d9bf3f626d37a5b09aca09460222febbb7e5b3d5f431a0e858bad00756f91"
+        },
+        "gt": {
+          "path": "external_test500/selected100_work/dataset/masks/aeriald_P2721_patch_007601_o105362.png",
+          "sha256": "5b98aca429ee4a14f97aa4f6deeaca276800b3098e58084afbad00801a190361"
+        },
+        "audio": {
+          "path": "external_test500/selected100_work/dataset/audio/human/aeriald_P2721_patch_007601_o105362.wav",
+          "sha256": "a438567baebdd17a24789c8ba70dde80eebcedbaaa43b0f10d2cdd0e3a69e980"
+        },
+        "swin": {
+          "path": "results/external/aeroreformer2_swin_b_full_20260805/paired10/test_human10/masks/f9/aeriald_P2721_patch_007601_o105362.png",
+          "sha256": "9d6f5a548fbb00382ed4d323dad4eae2c60e8e4d255fc47cb02319a057220e84"
+        },
+        "resnet": {
+          "path": "results/external/aeroreformer2_resnet101_full_20260805/paired10/test_human10/masks/f9/aeriald_P2721_patch_007601_o105362.png",
+          "sha256": "38a5eecd9aa45699447ac2a00b1928c8c6ab174d0c4a11548e33e5ee5d12e574"
+        },
+        "lscf": {
+          "path": "results/external/lscf2025_swin_b_audio_adapter_full_20260721/paired10/test_human10/masks/f9/aeriald_P2721_patch_007601_o105362.png",
+          "sha256": "5f30fbaf40ee5e2e7caf91ec51b67410c89fe62a7e7de196011eac7992e34322"
+        }
+      }
+    },
+    {
+      "id": "aeriald_P0128_patch_000215_o1882",
+      "group": "human",
+      "sources": {
+        "image": {
+          "path": "external_test500/selected100_work/dataset/images/aeriald_P0128_patch_000215_o1882.png",
+          "sha256": "b40e6a2e8c1007481bd8190450cd0973843eefabc7a5c15f7ee4f562043720e7"
+        },
+        "gt": {
+          "path": "external_test500/selected100_work/dataset/masks/aeriald_P0128_patch_000215_o1882.png",
+          "sha256": "f29b1ea086b8b759a5d1fb454eab280994a9cce9e515842902b4a5394b058f70"
+        },
+        "audio": {
+          "path": "external_test500/selected100_work/dataset/audio/human/aeriald_P0128_patch_000215_o1882.wav",
+          "sha256": "9c4516c3a016eac35e3c29292e399e8d8ac26dca7103c6f3488af23dcdaa78ad"
+        },
+        "swin": {
+          "path": "results/external/aeroreformer2_swin_b_full_20260805/paired10/test_human10/masks/42/aeriald_P0128_patch_000215_o1882.png",
+          "sha256": "34b7bc3c4cdccf2ba1995731c48847c0ef59a0d558fea90c0f5685db3d8a4ac9"
+        },
+        "resnet": {
+          "path": "results/external/aeroreformer2_resnet101_full_20260805/paired10/test_human10/masks/42/aeriald_P0128_patch_000215_o1882.png",
+          "sha256": "c6cfe8c60d10ccd3d8edffe67b1c874bc33758f78a83a0609c6fca156a790d64"
+        },
+        "lscf": {
+          "path": "results/external/lscf2025_swin_b_audio_adapter_full_20260721/paired10/test_human10/masks/42/aeriald_P0128_patch_000215_o1882.png",
+          "sha256": "61966902db0d3944dcdce6f6701d13974fa7129daaf058a7209d13fe72069f95"
+        }
+      }
+    }
+  ]
+}

@@ -6,12 +6,13 @@
   <meta name="description" content="AeroReformer2: audio-guided referring image segmentation for aerial imagery, with the VoiceAeroRef dataset.">
   <meta name="theme-color" content="#081522">
   <meta property="og:title" content="AeroReformer2">
-  <meta property="og:description" content="Aerial Referring Transformer 2 for Audio-Guided Image Segmentation">
+  <meta property="og:description" content="Spoken-Query Referring Segmentation for Aerial Images">
   <meta property="og:type" content="website">
   <meta property="og:image" content="assets/aeroreformer2.png">
-  <title>AeroReformer2 · Audio-Guided Aerial Segmentation</title>
+  <title>AeroReformer2 · Spoken-Query Referring Segmentation</title>
   <link rel="stylesheet" href="styles.css">
-  <script src="script.js" defer></script>
+  <script src="cases.js" defer></script>
+  <script src="page.js" defer></script>
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
@@ -26,11 +27,11 @@
         <span></span><span></span><span></span>
       </button>
       <div class="nav-links" id="nav-links">
+        <a href="#results">Examples</a>
+        <a href="#benchmark">Benchmarks</a>
         <a href="#method">Method</a>
-        <a href="#results">Results</a>
         <a href="#dataset">Dataset</a>
         <a href="#reproduce">Reproduce</a>
-        <a href="https://huggingface.co/datasets/lironui/VoiceAeroRef">Dataset ↗</a>
         <a class="nav-cta" href="https://github.com/lironui/AeroReformer2">Code ↗</a>
       </div>
     </nav>
@@ -40,8 +41,10 @@
     <section class="hero" id="top">
       <div class="hero-grid shell">
         <div class="hero-copy">
-          <p class="eyebrow">Audio × Vision × Remote Sensing</p>
+          <p class="eyebrow">AeroReformer2 · Audio × Vision</p>
           <h1>Point to an aerial object.<br><span>With your voice.</span></h1>
+          <p class="paper-title">Spoken-Query Referring Segmentation for Aerial Images</p>
+          <p class="authors">Rui Li · Chenxi Duan · Haoyang Yang</p>
           <p class="hero-lead">
             AeroReformer2 converts a spoken referring expression and an aerial
             image into a precise segmentation mask—combining confidence-gated
@@ -49,7 +52,7 @@
             boundary refinement.
           </p>
           <div class="hero-actions">
-            <a class="button primary" href="https://github.com/lironui/AeroReformer2">Explore the code</a>
+            <a class="button primary" href="#results">Explore real examples ↓</a>
             <a class="button secondary" href="https://huggingface.co/datasets/lironui/VoiceAeroRef">Get VoiceAeroRef</a>
           </div>
           <ul class="hero-meta" aria-label="Project features">
@@ -58,30 +61,24 @@
             <li>1/4-resolution masks</li>
           </ul>
         </div>
-        <div class="signal-card" aria-label="Audio-guided segmentation concept">
-          <div class="signal-top">
-            <span>Spoken query</span>
-            <span class="live-dot">16 kHz</span>
+        <div class="signal-card" aria-label="Real aircraft segmentation example">
+          <div class="signal-top"><span>Hear it. Find it.</span><span class="live-dot">16 kHz audio</span></div>
+          <blockquote id="hero-phrase">“The plane located at the bottom row of the group and furthest to the right.”</blockquote>
+          <div class="audio-strip">
+            <img src="assets/examples/success-test_014110/waveform.svg" alt="" class="audio-wave" width="400" height="52">
+            <audio id="hero-audio" controls preload="metadata" aria-label="Play the aircraft spoken query" src="assets/examples/success-test_014110/query.wav"></audio>
           </div>
-          <div class="waveform" aria-hidden="true">
-            <i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i>
-            <i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i>
-            <i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i>
+          <div class="hero-scene image-stack">
+            <img class="rgb-layer" src="assets/examples/success-test_014110/rgb.webp" alt="Aerial image of parked aircraft; the query refers to the rightmost aircraft in the bottom row of the group." width="512" height="512" fetchpriority="high">
+            <img id="hero-overlay" class="mask-layer" src="assets/examples/success-test_014110/swin-overlay.png" alt="" width="512" height="512">
+            <span class="scene-label" id="hero-score">Swin-B · IoU 0.888</span>
           </div>
-          <blockquote>“The small plane at the top-left corner.”</blockquote>
-          <div class="flow-line">
-            <span>Speech tokens</span>
-            <b>→</b>
-            <span>Visual query</span>
-            <b>→</b>
-            <span>Mask</span>
+          <div class="segmented hero-modes" role="group" aria-label="Aircraft image view">
+            <button type="button" data-hero="rgb" aria-pressed="false">RGB</button>
+            <button type="button" data-hero="gt" aria-pressed="false">Ground truth</button>
+            <button type="button" data-hero="swin" aria-pressed="true">Prediction</button>
           </div>
-          <div class="mask-preview" aria-hidden="true">
-            <span class="plane one">✦</span>
-            <span class="plane two">✦</span>
-            <span class="plane three">✦</span>
-            <span class="target-ring"></span>
-          </div>
+          <p class="demo-note">Real VoiceAeroRef test case · saved prediction</p>
         </div>
       </div>
     </section>
@@ -89,9 +86,89 @@
     <section class="stats-band" aria-label="Dataset summary">
       <div class="stats shell">
         <div><strong>52,466</strong><span>valid image–expression–mask triplets</span></div>
-        <div><strong>262,696</strong><span>audio–metadata records</span></div>
+        <div><strong>236,524</strong><span>clean speech recordings</span></div>
         <div><strong>8</strong><span>English neural voices</span></div>
         <div><strong>9</strong><span>controlled hard conditions</span></div>
+      </div>
+    </section>
+
+    <section class="section results-section" id="results">
+      <div class="shell results-shell">
+        <div class="section-heading split-heading results-heading">
+          <div><p class="eyebrow">Listen · inspect · compare</p><h2>The actual scene.<br>The spoken reference.<br>The predicted mask.</h2></div>
+          <p>Explore 24 examples from the revised paper. Listen to the paired query, inspect masks on the original RGB image, and compare both AeroReformer2 backbones with the LSCF audio adapter.</p>
+        </div>
+        <div class="example-explorer" id="example-explorer">
+          <div class="group-tabs" role="tablist" aria-label="Example groups">
+            <button type="button" role="tab" id="group-success" data-group="success" aria-controls="example-content" aria-selected="true">Successful cases <span>06</span></button>
+            <button type="button" role="tab" id="group-failure" data-group="failure" aria-controls="example-content" aria-selected="false" tabindex="-1">Failure cases <span>06</span></button>
+            <button type="button" role="tab" id="group-external" data-group="external" aria-controls="example-content" aria-selected="false" tabindex="-1">Aerial-D / Qwen <span>06</span></button>
+            <button type="button" role="tab" id="group-human" data-group="human" aria-controls="example-content" aria-selected="false" tabindex="-1">Human speech <span>06</span></button>
+          </div>
+          <div id="example-content" role="tabpanel" aria-labelledby="group-success">
+            <div class="example-toolbar">
+              <label class="scene-picker">Choose a scene <select id="scene-select" aria-label="Choose an example scene"></select></label>
+              <div class="segmented view-modes" role="group" aria-label="Comparison display">
+                <button type="button" data-view="overlay" aria-pressed="true">RGB + mask</button>
+                <button type="button" data-view="mask" aria-pressed="false">Binary masks</button>
+              </div>
+            </div>
+            <div class="query-row">
+              <div><p class="speech-source" id="speech-source"></p><blockquote id="example-query"></blockquote></div>
+              <div class="query-player"><audio id="example-audio" controls preload="metadata" aria-label="Play the selected example's spoken query"></audio><a id="audio-download" download>Download query ↓</a></div>
+            </div>
+            <div class="comparison-grid" id="comparison-grid" aria-label="Input, ground truth and three model predictions"></div>
+            <div class="example-footer"><p id="case-note" aria-live="polite"></p><p class="mask-legend">Colored regions show mask foreground. Click a panel to enlarge.</p></div>
+          </div>
+          <noscript><p>Enable JavaScript to switch examples and compare overlays. The real aircraft example above and paper figures below remain available.</p></noscript>
+        </div>
+        <p class="selection-note">Saved experimental results, with the original paired audio; this viewer does not run inference. Cases are selected illustrations, not an unbiased performance sample. Use the benchmark results below for aggregate comparisons.</p>
+        <details class="paper-comparisons">
+          <summary>Explore all six paper comparison figures <span>Successes, failures, noise, transfer and human speech ↗</span></summary>
+          <div class="result-browser"><div class="result-tabs" role="tablist" aria-label="Paper comparison figures"><button class="result-tab active" id="figure-tab-success" type="button" role="tab" aria-selected="true" aria-controls="figure-success" tabindex="0" data-result="figure-success"><span>01</span><b>Successful grounding</b><small>Six VoiceAeroRef scenes</small></button>
+<button class="result-tab" id="figure-tab-failure" type="button" role="tab" aria-selected="false" aria-controls="figure-failure" tabindex="-1" data-result="figure-failure"><span>02</span><b>Failure analysis</b><small>Selection, coverage & extra regions</small></button>
+<button class="result-tab" id="figure-tab-snr" type="button" role="tab" aria-selected="false" aria-controls="figure-snr" tabindex="-1" data-result="figure-snr"><span>03</span><b>Paired noise & SNR</b><small>Rotor · wind · mixed</small></button>
+<button class="result-tab" id="figure-tab-models" type="button" role="tab" aria-selected="false" aria-controls="figure-models" tabindex="-1" data-result="figure-models"><span>04</span><b>Models under noise</b><small>Swin-B · ResNet-101 · LSCF</small></button>
+<button class="result-tab" id="figure-tab-external" type="button" role="tab" aria-selected="false" aria-controls="figure-external" tabindex="-1" data-result="figure-external"><span>05</span><b>Aerial-D / Qwen100</b><small>A different dataset & synthesizer</small></button>
+<button class="result-tab" id="figure-tab-human" type="button" role="tab" aria-selected="false" aria-controls="figure-human" tabindex="-1" data-result="figure-human"><span>06</span><b>Human-recorded speech</b><small>Five useful results & a ship failure</small></button></div><div class="result-stage"><article class="result-panel active" id="figure-success" role="tabpanel" aria-labelledby="figure-tab-success" ><button class="result-zoom" type="button" aria-label="Enlarge successful grounding"><img loading="lazy" src="assets/results/qualitative_success_six_scenes.png" alt="Six selected successful cases: overpass, tanks, aircraft, vessel, vehicles and soccer field. Both AeroReformer2 backbones and the LSCF audio adapter receive the same spoken reference."><span>Enlarge comparison ↗</span></button><p class="figure-caption">Six selected successful cases: overpass, tanks, aircraft, vessel, vehicles and soccer field. Both AeroReformer2 backbones and the LSCF audio adapter receive the same spoken reference. <a href="assets/results/qualitative_success_six_scenes.png" target="_blank" rel="noopener">Open original ↗</a></p></article>
+<article class="result-panel" id="figure-failure" role="tabpanel" aria-labelledby="figure-tab-failure" hidden><button class="result-zoom" type="button" aria-label="Enlarge failure analysis"><img loading="lazy" src="assets/results/qualitative_failure_cases.png" alt="Six selected errors grouped by incorrect target selection, incomplete coverage and additional foreground. These examples illustrate failure modes; they do not estimate their frequency."><span>Enlarge comparison ↗</span></button><p class="figure-caption">Six selected errors grouped by incorrect target selection, incomplete coverage and additional foreground. These examples illustrate failure modes; they do not estimate their frequency. <a href="assets/results/qualitative_failure_cases.png" target="_blank" rel="noopener">Open original ↗</a></p></article>
+<article class="result-panel" id="figure-snr" role="tabpanel" aria-labelledby="figure-tab-snr" hidden><button class="result-zoom" type="button" aria-label="Enlarge paired noise & snr"><img loading="lazy" src="assets/results/paired_snr_failure_groups.png" alt="Image, expression, target and original speech stay fixed within each case. Rows vary rotor, wind and mixed interference; columns vary nominal SNR at 15, 7.5 and 0 dB. Panels include three failure types and a stable case."><span>Enlarge comparison ↗</span></button><p class="figure-caption">Image, expression, target and original speech stay fixed within each case. Rows vary rotor, wind and mixed interference; columns vary nominal SNR at 15, 7.5 and 0 dB. Panels include three failure types and a stable case. <a href="assets/results/paired_snr_failure_groups.png" target="_blank" rel="noopener">Open original ↗</a></p></article>
+<article class="result-panel" id="figure-models" role="tabpanel" aria-labelledby="figure-tab-models" hidden><button class="result-zoom" type="button" aria-label="Enlarge models under noise"><img loading="lazy" src="assets/results/paired_snr_three_model_comparison.png" alt="Matched three-model comparison with clean speech and mixed noise at 15, 7.5 and 0 dB. Backbone rankings vary by scene: ResNet-101 retains more of the vehicle and harbor at 0 dB, while Swin-B performs best on the dam."><span>Enlarge comparison ↗</span></button><p class="figure-caption">Matched three-model comparison with clean speech and mixed noise at 15, 7.5 and 0 dB. Backbone rankings vary by scene: ResNet-101 retains more of the vehicle and harbor at 0 dB, while Swin-B performs best on the dam. <a href="assets/results/paired_snr_three_model_comparison.png" target="_blank" rel="noopener">Open original ↗</a></p></article>
+<article class="result-panel" id="figure-external" role="tabpanel" aria-labelledby="figure-tab-external" hidden><button class="result-zoom" type="button" aria-label="Enlarge aerial-d / qwen100"><img loading="lazy" src="assets/results/aeriald_qwen100_success_six_scenes.png" alt="Six selected Aerial-D examples with Qwen3-TTS speech, evaluated using existing checkpoints without fine-tuning. Values are per-example IoU from the original evaluation."><span>Enlarge comparison ↗</span></button><p class="figure-caption">Six selected Aerial-D examples with Qwen3-TTS speech, evaluated using existing checkpoints without fine-tuning. Values are per-example IoU from the original evaluation. <a href="assets/results/aeriald_qwen100_success_six_scenes.png" target="_blank" rel="noopener">Open original ↗</a></p></article>
+<article class="result-panel" id="figure-human" role="tabpanel" aria-labelledby="figure-tab-human" hidden><button class="result-zoom" type="button" aria-label="Enlarge human-recorded speech"><img loading="lazy" src="assets/results/aeriald_human_six_scenes.png" alt="Six Aerial-D examples with recorded human speech, including an unsuccessful ship prediction. The paired human-speech study contains only ten cases and is exploratory."><span>Enlarge comparison ↗</span></button><p class="figure-caption">Six Aerial-D examples with recorded human speech, including an unsuccessful ship prediction. The paired human-speech study contains only ten cases and is exploratory. <a href="assets/results/aeriald_human_six_scenes.png" target="_blank" rel="noopener">Open original ↗</a></p></article></div></div>
+        </details>
+      </div>
+    </section>
+
+    <section class="section shell" id="benchmark">
+      <div class="section-heading split-heading">
+        <div><p class="eyebrow">Results from the revised paper</p><h2>Clean speech, interference,<br>and a new domain.</h2></div>
+        <p>All methods receive spoken queries. Checkpoints are selected using clean validation data. External evaluations use existing checkpoints without fine-tuning.</p>
+      </div>
+      <div class="metric-grid">
+        <article><span>VoiceAeroRef · clean</span><strong>62.09<small>%</small></strong><p>mIoU · +5.38 points over LSCF</p></article>
+        <article><span>VoiceAeroRef · hard</span><strong>54.09<small>%</small></strong><p>mIoU · +5.63 points over LSCF</p></article>
+        <article><span>Aerial-D · Qwen100</span><strong>60.23<small>%</small></strong><p>mIoU · 100 external cases</p></article>
+        <article><span>Aerial-D · Human10</span><strong>53.46<small>%</small></strong><p>mIoU · 10 paired human recordings</p></article>
+      </div>
+      <div class="benchmark-table-wrap" tabindex="0" role="region" aria-label="Scrollable benchmark comparison">
+        <table class="benchmark-table"><caption>Mean intersection over union (mIoU, %) · higher is better</caption>
+          <thead><tr><th scope="col">Method</th><th scope="col">Clean test<br><small>16,159 cases</small></th><th scope="col">Hard test<br><small>16,159 cases</small></th><th scope="col">Qwen100<br><small>100 cases</small></th><th scope="col">Human10<br><small>10 cases</small></th></tr></thead>
+          <tbody><tr><th scope="row">Audio U-Net</th><td>27.84</td><td>22.33</td><td>25.20</td><td>5.15</td></tr>
+<tr><th scope="row">Audio FCN · ResNet-101</th><td>49.54</td><td>37.79</td><td>41.19</td><td>22.43</td></tr>
+<tr><th scope="row">Audio DeepLabV3 · ResNet-101</th><td>51.87</td><td>42.48</td><td>45.25</td><td>21.51</td></tr>
+<tr><th scope="row">FIANet adapter · Swin-B</th><td>53.48</td><td>46.37</td><td>51.06</td><td>48.02</td></tr>
+<tr><th scope="row">SBANet adapter · Swin-B</th><td>55.28</td><td>48.03</td><td>52.49</td><td>52.78</td></tr>
+<tr><th scope="row">STDNet adapter · Swin-B</th><td>50.34</td><td>44.57</td><td>46.00</td><td>39.40</td></tr>
+<tr><th scope="row">LSCF adapter · Swin-B</th><td>56.71</td><td>48.46</td><td>54.58</td><td>43.40</td></tr>
+<tr class="ours"><th scope="row">AeroReformer2 · ResNet-101</th><td>59.26</td><td>50.86</td><td>52.71</td><td>52.71</td></tr>
+<tr class="ours"><th scope="row">AeroReformer2 · Swin-B</th><td><strong>62.09</strong></td><td><strong>54.09</strong></td><td><strong>60.23</strong></td><td><strong>53.46</strong></td></tr></tbody>
+        </table>
+      </div>
+      <p class="benchmark-note">FIANet, SBANet, STDNet and LSCF are audio-token adaptations of text-guided models. Qwen100 changes the imagery, expressions and synthesizer together. Human10 is a paired subset, not the full Qwen100 set.</p>
+      <div class="study-grid">
+        <article><p class="eyebrow">Paired acoustic conditions</p><h3>Noise can change the selected object.</h3><p>The paired study holds the image, expression, target and source speech fixed, then varies rotor, wind and mixed noise at 15, 7.5 and 0 dB. It exposes target confusion, incomplete coverage and extra foreground; some cases remain stable.</p><button class="text-link figure-jump" type="button" data-figure="snr">Inspect the paired noise comparisons →</button></article>
+        <article><p class="eyebrow">Paired speech sources</p><h3>From synthesized to human speech.</h3><p>On the same ten Aerial-D cases, Swin-B reaches 50.19% mIoU with Qwen speech and 53.46% with human recordings. This small study supports feasibility; it does not establish robustness across speakers, devices or spontaneous descriptions.</p><button class="text-link example-jump" type="button" data-example-group="human">Listen to the human recordings →</button></article>
       </div>
     </section>
 
@@ -109,7 +186,7 @@
         <article>
           <span class="feature-number">01</span>
           <h3>Confidence-gated speech memory</h3>
-          <p>Wav2Vec2 tokens receive learned confidence weights before cross-modal interaction, reducing the influence of weak or corrupted regions.</p>
+          <p>Wav2Vec2 tokens receive weights learned from segmentation supervision. They represent task usefulness, rather than calibrated speech confidence or corruption estimates.</p>
         </article>
         <article>
           <span class="feature-number">02</span>
@@ -128,83 +205,9 @@
         </article>
       </div>
       <figure class="paper-figure">
-        <img src="assets/aeroreformer2.png" alt="Detailed AeroReformer2 architecture with visual and speech branches">
+        <a href="assets/aeroreformer2.png" target="_blank" rel="noopener"><img loading="lazy" src="assets/aeroreformer2.png" alt="Detailed AeroReformer2 architecture with visual and speech branches"></a>
         <figcaption>AeroReformer2 architecture. Open the image for full-resolution equations and data flow.</figcaption>
       </figure>
-    </section>
-
-    <section class="section results-section" id="results">
-      <div class="results-glow one" aria-hidden="true"></div>
-      <div class="results-glow two" aria-hidden="true"></div>
-      <div class="shell results-shell">
-        <div class="section-heading split-heading results-heading">
-          <div>
-            <p class="eyebrow">Qualitative results</p>
-            <h2>Precise masks from a spoken reference.</h2>
-          </div>
-          <p>
-            Representative clean-test comparisons from the paper. Each panel
-            shows the input, target mask, AeroReformer2 prediction and five
-            competing methods under the same spoken instruction.
-          </p>
-        </div>
-
-        <div class="result-browser">
-          <div class="result-tabs" role="tablist" aria-label="Qualitative comparison cases">
-            <button class="result-tab active" type="button" role="tab" aria-selected="true" data-result="result-one">
-              <span>01</span>
-              <b>Partial baseball field</b>
-              <small>Boundary recovery · IoU 0.971</small>
-            </button>
-            <button class="result-tab" type="button" role="tab" aria-selected="false" data-result="result-two">
-              <span>02</span>
-              <b>Small central object</b>
-              <small>Low-light localization · IoU 0.878</small>
-            </button>
-            <button class="result-tab" type="button" role="tab" aria-selected="false" data-result="result-three">
-              <span>03</span>
-              <b>Waterfront vehicle</b>
-              <small>Tiny-object segmentation · IoU 0.875</small>
-            </button>
-          </div>
-
-          <div class="result-stage">
-            <article class="result-panel active" id="result-one" role="tabpanel">
-              <button class="result-zoom" type="button" aria-label="Open baseball-field comparison at full size">
-                <img src="assets/results/qualitative_case_1.png" alt="Comparison of AeroReformer2 and five baselines for a partially visible baseball field">
-                <span>View full comparison</span>
-              </button>
-            </article>
-            <article class="result-panel" id="result-two" role="tabpanel" hidden>
-              <button class="result-zoom" type="button" aria-label="Open low-light object comparison at full size">
-                <img src="assets/results/qualitative_case_2.png" alt="Comparison of AeroReformer2 and five baselines for a small object in a low-light aerial image">
-                <span>View full comparison</span>
-              </button>
-            </article>
-            <article class="result-panel" id="result-three" role="tabpanel" hidden>
-              <button class="result-zoom" type="button" aria-label="Open waterfront-vehicle comparison at full size">
-                <img src="assets/results/qualitative_case_3.png" alt="Comparison of AeroReformer2 and five baselines for a tiny vehicle beside the waterfront">
-                <span>View full comparison</span>
-              </button>
-            </article>
-          </div>
-        </div>
-
-        <div class="result-notes" aria-label="What the examples demonstrate">
-          <article>
-            <span class="note-mark">A</span>
-            <div><b>Audio-grounded selection</b><p>The spoken description separates the intended instance from visually similar distractors.</p></div>
-          </article>
-          <article>
-            <span class="note-mark">B</span>
-            <div><b>Small-object sensitivity</b><p>Token-level speech guidance remains useful when the target occupies only a few pixels.</p></div>
-          </article>
-          <article>
-            <span class="note-mark">C</span>
-            <div><b>Boundary preservation</b><p>The 1/4-resolution refinement path restores contours after semantic localization.</p></div>
-          </article>
-        </div>
-      </div>
     </section>
 
     <section class="section dataset-section" id="dataset">
@@ -215,21 +218,20 @@
             <h2>A controlled audio layer for aerial referring segmentation.</h2>
           </div>
           <p>
-            Clean speech covers four accent groups and two genders. Hard
-            validation and test splits introduce rotor, wind and mixed
+            Clean speech covers four accent groups and two genders. The hard
+            test split introduces rotor, wind and mixed
             interference at three SNR-centred severity levels.
           </p>
         </div>
         <div class="dataset-layout">
           <div class="dataset-table-wrap">
             <table>
-              <caption>VoiceAeroRef release inventory</caption>
+              <caption>VoiceAeroRef paper evaluation inventory</caption>
               <thead><tr><th>Config</th><th>Split</th><th>Records</th></tr></thead>
               <tbody>
                 <tr><td><span class="pill clean">Clean</span></td><td>Train</td><td>210,352</td></tr>
                 <tr><td><span class="pill clean">Clean</span></td><td>Validation</td><td>10,013</td></tr>
                 <tr><td><span class="pill clean">Clean</span></td><td>Test</td><td>16,159</td></tr>
-                <tr><td><span class="pill hard">Hard</span></td><td>Validation</td><td>10,013</td></tr>
                 <tr><td><span class="pill hard">Hard</span></td><td>Test</td><td>16,159</td></tr>
               </tbody>
             </table>
@@ -243,7 +245,7 @@
           </div>
         </div>
         <figure class="paper-figure light">
-          <img src="assets/dataset_pipeline.png" alt="VoiceAeroRef data construction and split pipeline">
+          <img loading="lazy" src="assets/dataset_pipeline.png" alt="VoiceAeroRef data construction and split pipeline">
           <figcaption>VoiceAeroRef construction, quality control, speech generation, hard-set creation and split policy.</figcaption>
         </figure>
       </div>
@@ -304,7 +306,7 @@ pip install -e .</code></pre>
         <div>
           <p class="eyebrow">Open research release</p>
           <h2>Build on AeroReformer2.</h2>
-          <p>Model code, training tools, validation metrics, data preparation and a deployable project page—without internal baselines or ablation code.</p>
+          <p>Explore the released model, reproduce the experiments, and build on the VoiceAeroRef spoken-query benchmark.</p>
         </div>
         <div class="cta-actions">
           <a class="button primary" href="https://github.com/lironui/AeroReformer2">View repository</a>
@@ -321,9 +323,6 @@ pip install -e .</code></pre>
     </div>
   </footer>
 
-  <dialog class="result-dialog" aria-label="Full-size qualitative comparison">
-    <button class="dialog-close" type="button" aria-label="Close full-size comparison">Close</button>
-    <img src="" alt="">
-  </dialog>
+  <dialog class="result-dialog" aria-label="Enlarged comparison"><div class="dialog-toolbar"><p id="dialog-title"></p><button class="dialog-close" type="button" aria-label="Close enlarged comparison">Close ×</button></div><div class="dialog-media"></div></dialog>
 </body>
 </html>
